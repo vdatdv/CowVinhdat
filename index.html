@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="CowVINHDAT - Trang tải hồ sơ cấu hình DNS dành cho iPhone.">
+  <title>CowVINHDAT 💛 | DNS Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080b16;
+      --text: #f7f8ff;
+      --muted: #929ab5;
+      --border: rgba(255,255,255,.11);
+      --purple: #9c77ff;
+      --blue: #5f9cff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100svh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 12% 12%,
+          rgba(101,65,225,.19), transparent 40%),
+        radial-gradient(ellipse at 88% 42%,
+          rgba(41,108,237,.15), transparent 44%),
+        radial-gradient(ellipse at 50% 100%,
+          rgba(92,43,156,.10), transparent 48%);
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .orb {
+      position: fixed;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      filter: blur(105px);
+      opacity: .27;
+      pointer-events: none;
+      z-index: -1;
+      animation: float 12s ease-in-out infinite alternate;
+    }
+
+    .orb.one {
+      background: #8150ff;
+      top: 10%;
+      left: -170px;
+    }
+
+    .orb.two {
+      background: #287aff;
+      right: -180px;
+      top: 45%;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      to { transform: translate(55px, 75px); }
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    nav {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.6px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(140deg,
+        #916dff, #477fff);
+      box-shadow: 0 6px 25px rgba(112,88,255,.28);
+      font-size: 23px;
+    }
+
+    .nav-badge {
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255,255,255,.035);
+      color: #c4c9dd;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 70px 0 65px;
+    }
+
+    .hero {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(160,139,255,.25);
+      background: rgba(123,91,255,.095);
+      color: #cdbdff;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .35px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #a88aff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #a88aff;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.08;
+      letter-spacing: -3.8px;
+      font-weight: 900;
+      margin: 30px auto 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        110deg, #b5a0ff 5%, #75b8ff 54%, #c9aaff
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero > p {
+      max-width: 540px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .service {
+      padding: 10px 15px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.035);
+      font-size: 12px;
+      font-weight: 600;
+      color: #d9def2;
+    }
+
+    .main-card {
+      width: min(560px, 100%);
+      position: relative;
+      margin: 52px auto 0;
+      border-radius: 28px;
+      padding: 1px;
+      background: linear-gradient(
+        145deg,
+        rgba(182,163,255,.55),
+        rgba(255,255,255,.06) 45%,
+        rgba(96,157,255,.32)
+      );
+      box-shadow:
+        0 25px 100px rgba(0,0,0,.30),
+        0 0 90px rgba(99,74,222,.09);
+    }
+
+    .card-inner {
+      padding: 33px;
+      border-radius: 27px;
+      background: rgba(17,21,39,.94);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .profile-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 19px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(
+        145deg, #8e69fb, #478cff
+      );
+      font-size: 29px;
+      box-shadow: 0 10px 28px rgba(102,88,240,.27);
+    }
+
+    .card-top h2 {
+      font-size: 20px;
+      letter-spacing: -.6px;
+      margin-bottom: 7px;
+    }
+
+    .card-top p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 26px 0;
+    }
+
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+
+    .detail span:first-child {
+      color: var(--muted);
+    }
+
+    .detail strong {
+      color: #e8eafb;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .status {
+      color: #83dfbc !important;
+    }
+
+    .download-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 11px;
+      width: 100%;
+      margin-top: 30px;
+      padding: 19px 16px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(
+        105deg, #8766ff, #538eff
+      );
+      color: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(90,100,255,.24);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 42px rgba(90,100,255,.36);
+    }
+
+    .download-btn:active {
+      transform: scale(.98);
+    }
+
+    .download-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 17px;
+      color: #8289a5;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 85px 0 27px;
+    }
+
+    .section-title h2 {
+      font-size: 27px;
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      margin-top: 11px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: rgba(255,255,255,.032);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 19px;
+      transition: background .25s, transform .25s;
+    }
+
+    .step:hover {
+      background: rgba(255,255,255,.055);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 12px;
+      background: rgba(139,112,255,.15);
+      color: #c0afff;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-size: 14px;
+      margin-bottom: 11px;
+    }
+
+    .step p {
+      font-size: 12px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .warning {
+      margin: 30px auto 0;
+      max-width: 780px;
+      padding: 17px 20px;
+      border: 1px solid rgba(255,207,117,.17);
+      background: rgba(255,194,92,.045);
+      border-radius: 15px;
+      color: #b8b4af;
+      line-height: 1.75;
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer strong {
+      color: #ddd9ff;
+    }
+
+    footer a {
+      color: #a79eff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .fade-up {
+      animation: fadeUp .85s both;
+    }
+
+    .delay-1 { animation-delay: .12s; }
+    .delay-2 { animation-delay: .25s; }
+    .delay-3 { animation-delay: .4s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav { height: 73px; }
+      main { padding-top: 45px; }
+      h1 { letter-spacing: -2.4px; }
+      .hero > p { font-size: 13px; }
+      .card-inner { padding: 24px; }
+      .steps { grid-template-columns: 1fr; }
+      .section-title { margin-top: 65px; }
+      .footer-inner { justify-content: center; text-align: center; }
+      .nav-badge { font-size: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <div class="container">
+    <nav>
+      <a class="brand" href="#">
+        <span class="brand-icon">🐮</span>
+        <span>CowVINHDAT</span>
+      </a>
+      <span class="nav-badge">✦ DNS PROFILE</span>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow fade-up">
+          <span class="dot"></span>
+          WELCOME TO COWVINHDAT
+        </div>
+
+        <h1 class="fade-up delay-1">
+          Your iPhone.<br>
+          <span class="gradient-text">Your Experience.</span>
+        </h1>
+
+        <p class="fade-up delay-2">
+          Hồ sơ cấu hình DNS dành cho iPhone.
+          Tải xuống nhanh chóng với giao diện đơn giản,
+          hiện đại và dễ sử dụng.
+        </p>
+
+        <div class="services fade-up delay-2">
+          <span class="service">💛 Locket Gold</span>
+          <span class="service">🎵 Spotify</span>
+          <span class="service">▶️ YouTube</span>
+        </div>
+      </section>
+
+      <section class="main-card fade-up delay-3">
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="profile-icon">🐮</div>
+            <div>
+              <h2>con Bò Vinhdat 💛</h2>
+              <p>DNS Configuration Profile</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="detail">
+            <span>Tổ chức</span>
+            <strong>CowVINHDAT</strong>
+          </div>
+
+          <div class="detail">
+            <span>Loại cấu hình</span>
+            <strong>DNS-over-HTTPS</strong>
+          </div>
+
+          <div class="detail">
+            <span>Thiết bị</span>
+            <strong>iPhone / iPad</strong>
+          </div>
+
+          <div class="detail">
+            <span>Trạng thái tệp</span>
+            <strong class="status">● Có sẵn để tải</strong>
+          </div>
+
+          <a
+            class="download-btn"
+            href="./BòNguVdat.mobileconfig"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke="currentColor"
+                 stroke-width="2">
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/>
+            </svg>
+            Tải cấu hình DNS
+          </a>
+
+          <p class="note">
+            Cài đặt qua Safari trên iPhone hoặc iPad.<br>
+            Chỉ cài đặt hồ sơ từ nguồn mà bạn tin tưởng.
+          </p>
+        </div>
+      </section>
+
+      <section id="guide">
+        <div class="section-title">
+          <h2>Cài đặt trong 3 bước</h2>
+          <p>Hướng dẫn cài đặt cấu hình trên iOS</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Tải cấu hình</h3>
+            <p>
+              Mở website bằng Safari trên iPhone
+              và chọn nút Tải cấu hình DNS.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Mở Cài đặt</h3>
+            <p>
+              Vào Cài đặt, chọn Hồ sơ đã tải về
+              hoặc Cài đặt chung → VPN & Quản lý thiết bị.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Xem và cài đặt</h3>
+            <p>
+              Kiểm tra nội dung, nhà cung cấp DNS
+              và chứng chỉ trước khi xác nhận cài đặt.
+            </p>
+          </article>
+        </div>
+
+        <div class="warning">
+          Lưu ý: Đây là hồ sơ cấu hình DNS, không phải gói
+          đăng ký Premium chính thức. Việc cài DNS không
+          bảo đảm mở khóa Locket Gold, Spotify Premium
+          hoặc YouTube Premium. Hồ sơ có chứng chỉ CA
+          bên thứ ba cần được kiểm tra kỹ trước khi tin cậy.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 <strong>CowVINHDAT 💛</strong>. All rights reserved.</span>
+      <a href="https://www.instagram.com/dtadvih/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Instagram @dtadvih ↗
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
