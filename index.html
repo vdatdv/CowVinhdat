@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080b16">
-  <meta name="description" content="CowVINHDAT - Trang tải hồ sơ cấu hình DNS dành cho iPhone.">
+  <meta name="description" content="CowVINHDAT - Locket Gold + Spotify + Youtube Premium">
   <title>CowVINHDAT 💛 | DNS Profile</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +15,12 @@
   <style>
     :root {
       --bg: #080b16;
+      --card: #121628;
       --text: #f7f8ff;
-      --muted: #929ab5;
+      --muted: #9ba5c2;
       --border: rgba(255,255,255,.11);
-      --purple: #9c77ff;
-      --blue: #5f9cff;
+      --purple: #966cff;
+      --blue: #548dff;
     }
 
     * {
@@ -34,8 +35,8 @@
 
     body {
       min-height: 100svh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", sans-serif;
+      font-family: Inter, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
@@ -47,12 +48,21 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse at 12% 12%,
-          rgba(101,65,225,.19), transparent 40%),
-        radial-gradient(ellipse at 88% 42%,
-          rgba(41,108,237,.15), transparent 44%),
-        radial-gradient(ellipse at 50% 100%,
-          rgba(92,43,156,.10), transparent 48%);
+        radial-gradient(
+          ellipse at 12% 12%,
+          rgba(101,65,225,.20),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 88% 42%,
+          rgba(41,108,237,.17),
+          transparent 44%
+        ),
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(92,43,156,.10),
+          transparent 48%
+        );
       pointer-events: none;
       z-index: -2;
     }
@@ -63,7 +73,7 @@
       height: 340px;
       border-radius: 50%;
       filter: blur(105px);
-      opacity: .27;
+      opacity: .26;
       pointer-events: none;
       z-index: -1;
       animation: float 12s ease-in-out infinite alternate;
@@ -83,13 +93,17 @@
     }
 
     @keyframes float {
-      to { transform: translate(55px, 75px); }
+      to {
+        transform: translate(55px,75px);
+      }
     }
 
     .container {
       width: min(1080px, calc(100% - 40px));
       margin-inline: auto;
     }
+
+    /* HEADER */
 
     nav {
       height: 88px;
@@ -116,8 +130,9 @@
       display: grid;
       place-items: center;
       border-radius: 14px;
-      background: linear-gradient(140deg,
-        #916dff, #477fff);
+      background: linear-gradient(
+        140deg, #916dff, #477fff
+      );
       box-shadow: 0 6px 25px rgba(112,88,255,.28);
       font-size: 23px;
     }
@@ -129,12 +144,14 @@
       background: rgba(255,255,255,.035);
       color: #c4c9dd;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     main {
-      padding: 70px 0 65px;
+      padding: 65px 0;
     }
+
+    /* HERO */
 
     .hero {
       max-width: 760px;
@@ -165,16 +182,16 @@
     }
 
     h1 {
-      font-size: clamp(42px, 8vw, 78px);
-      line-height: 1.08;
-      letter-spacing: -3.8px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -3px;
       font-weight: 900;
       margin: 30px auto 24px;
     }
 
     .gradient-text {
       background: linear-gradient(
-        110deg, #b5a0ff 5%, #75b8ff 54%, #c9aaff
+        110deg, #b5a0ff, #75b8ff, #c9aaff
       );
       -webkit-background-clip: text;
       background-clip: text;
@@ -189,6 +206,8 @@
       font-size: 15px;
     }
 
+    /* SERVICES */
+
     .services {
       display: flex;
       justify-content: center;
@@ -198,18 +217,36 @@
     }
 
     .service {
-      padding: 10px 15px;
-      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 15px;
+      border-radius: 13px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.035);
+      background: rgba(255,255,255,.04);
       font-size: 12px;
-      font-weight: 600;
-      color: #d9def2;
+      font-weight: 700;
+      color: #e2e5f5;
     }
 
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .youtube-icon {
+      width: 26px;
+      height: 19px;
+      display: block;
+    }
+
+    /* PROFILE CARD */
+
     .main-card {
-      width: min(560px, 100%);
-      position: relative;
+      width: min(560px,100%);
       margin: 52px auto 0;
       border-radius: 28px;
       padding: 1px;
@@ -227,7 +264,7 @@
     .card-inner {
       padding: 33px;
       border-radius: 27px;
-      background: rgba(17,21,39,.94);
+      background: rgba(17,21,39,.95);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
     }
@@ -241,25 +278,39 @@
     .profile-icon {
       width: 64px;
       height: 64px;
+      flex-shrink: 0;
       border-radius: 19px;
       display: grid;
       place-items: center;
       background: linear-gradient(
         145deg, #8e69fb, #478cff
       );
-      font-size: 29px;
+      font-size: 30px;
       box-shadow: 0 10px 28px rgba(102,88,240,.27);
     }
 
-    .card-top h2 {
-      font-size: 20px;
-      letter-spacing: -.6px;
-      margin-bottom: 7px;
+    .profile-info {
+      min-width: 0;
     }
 
-    .card-top p {
+    .profile-info h2 {
+      font-size: 20px;
+      letter-spacing: -.6px;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .profile-subtitle {
       color: var(--muted);
       font-size: 12px;
+    }
+
+    .profile-description {
+      margin-top: 10px;
+      color: #c8baff;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.7;
     }
 
     .divider {
@@ -273,7 +324,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      margin: 16px 0;
+      margin: 19px 0;
       font-size: 13px;
     }
 
@@ -283,13 +334,15 @@
 
     .detail strong {
       color: #e8eafb;
-      font-weight: 600;
+      font-weight: 700;
       text-align: right;
     }
 
     .status {
       color: #83dfbc !important;
     }
+
+    /* DOWNLOAD BUTTON */
 
     .download-btn {
       display: flex;
@@ -298,7 +351,7 @@
       gap: 11px;
       width: 100%;
       margin-top: 30px;
-      padding: 19px 16px;
+      padding: 20px 16px;
       border: none;
       border-radius: 16px;
       background: linear-gradient(
@@ -324,87 +377,119 @@
     }
 
     .download-btn svg {
-      width: 20px;
-      height: 20px;
+      width: 21px;
+      height: 21px;
+      flex-shrink: 0;
     }
 
-    .note {
-      text-align: center;
-      margin-top: 17px;
-      color: #8289a5;
-      font-size: 11px;
-      line-height: 1.7;
-    }
+    /* INSTALLATION GUIDE */
 
     .section-title {
       text-align: center;
-      margin: 85px 0 27px;
+      margin: 85px 0 32px;
+    }
+
+    .section-title .guide-label {
+      color: #ad98ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
     }
 
     .section-title h2 {
-      font-size: 27px;
+      font-size: clamp(25px,5vw,34px);
       letter-spacing: -1px;
+      font-weight: 800;
     }
 
-    .section-title p {
-      margin-top: 11px;
-      font-size: 13px;
+    .section-title > p:last-child {
+      margin-top: 12px;
+      font-size: 14px;
       color: var(--muted);
+      line-height: 1.7;
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+      align-items: stretch;
     }
 
     .step {
-      background: rgba(255,255,255,.032);
-      border: 1px solid var(--border);
-      padding: 25px;
-      border-radius: 19px;
-      transition: background .25s, transform .25s;
+      position: relative;
+      padding: 27px;
+      border-radius: 22px;
+      border: 1px solid rgba(159,144,255,.20);
+      background: linear-gradient(
+        155deg,
+        rgba(119,98,230,.10),
+        rgba(255,255,255,.025) 65%
+      );
+      transition:
+        transform .25s,
+        border-color .25s;
+      overflow-wrap: anywhere;
     }
 
     .step:hover {
-      background: rgba(255,255,255,.055);
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      border-color: rgba(161,137,255,.48);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
     }
 
     .step-number {
       display: grid;
       place-items: center;
-      width: 39px;
-      height: 39px;
-      border-radius: 12px;
-      background: rgba(139,112,255,.15);
-      color: #c0afff;
-      font-weight: 800;
-      margin-bottom: 20px;
+      width: 51px;
+      height: 51px;
+      border-radius: 16px;
+      background: linear-gradient(
+        135deg,
+        rgba(149,100,255,.30),
+        rgba(71,136,255,.22)
+      );
+      border: 1px solid rgba(180,160,255,.27);
+      color: #d2c5ff;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .step-symbol {
+      font-size: 25px;
     }
 
     .step h3 {
-      font-size: 14px;
-      margin-bottom: 11px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #f8f8ff;
+      margin-bottom: 14px;
+      line-height: 1.4;
     }
 
     .step p {
-      font-size: 12px;
-      line-height: 1.85;
-      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+      color: #d2d7eb;
     }
 
-    .warning {
-      margin: 30px auto 0;
-      max-width: 780px;
-      padding: 17px 20px;
-      border: 1px solid rgba(255,207,117,.17);
-      background: rgba(255,194,92,.045);
-      border-radius: 15px;
-      color: #b8b4af;
-      line-height: 1.75;
-      font-size: 12px;
+    .step:nth-child(3) {
+      border-color: rgba(145,118,255,.35);
+      background: linear-gradient(
+        155deg,
+        rgba(119,98,230,.15),
+        rgba(255,255,255,.025) 75%
+      );
     }
+
+    /* FOOTER */
 
     footer {
       padding: 30px 0 42px;
@@ -435,13 +520,23 @@
       color: white;
     }
 
+    /* ANIMATIONS */
+
     .fade-up {
       animation: fadeUp .85s both;
     }
 
-    .delay-1 { animation-delay: .12s; }
-    .delay-2 { animation-delay: .25s; }
-    .delay-3 { animation-delay: .4s; }
+    .delay-1 {
+      animation-delay: .12s;
+    }
+
+    .delay-2 {
+      animation-delay: .25s;
+    }
+
+    .delay-3 {
+      animation-delay: .4s;
+    }
 
     @keyframes fadeUp {
       from {
@@ -454,20 +549,140 @@
       }
     }
 
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin-inline: auto;
+      }
+
+      .step {
+        padding: 25px;
+      }
+
+      .step-header {
+        margin-bottom: 15px;
+      }
+    }
+
+    /* MOBILE */
+
     @media (max-width: 650px) {
-      nav { height: 73px; }
-      main { padding-top: 45px; }
-      h1 { letter-spacing: -2.4px; }
-      .hero > p { font-size: 13px; }
-      .card-inner { padding: 24px; }
-      .steps { grid-template-columns: 1fr; }
-      .section-title { margin-top: 65px; }
-      .footer-inner { justify-content: center; text-align: center; }
-      .nav-badge { font-size: 10px; }
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      nav {
+        height: 73px;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .nav-badge {
+        font-size: 10px;
+        padding: 8px 11px;
+      }
+
+      main {
+        padding-top: 45px;
+      }
+
+      h1 {
+        font-size: clamp(40px,11vw,57px);
+        letter-spacing: -2.4px;
+      }
+
+      .hero > p {
+        font-size: 13px;
+        line-height: 1.85;
+      }
+
+      .services {
+        gap: 8px;
+      }
+
+      .service {
+        font-size: 11px;
+        padding: 10px 11px;
+        gap: 6px;
+      }
+
+      .main-card {
+        margin-top: 37px;
+      }
+
+      .card-inner {
+        padding: 22px;
+      }
+
+      .profile-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 27px;
+        border-radius: 17px;
+      }
+
+      .profile-info h2 {
+        font-size: 17px;
+      }
+
+      .profile-description {
+        font-size: 11px;
+      }
+
+      .detail {
+        font-size: 12px;
+        gap: 8px;
+      }
+
+      .download-btn {
+        font-size: 14px;
+        padding: 19px 12px;
+      }
+
+      .section-title {
+        margin-top: 65px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .step {
+        padding: 24px;
+        border-radius: 20px;
+      }
+
+      .step-number {
+        width: 49px;
+        height: 49px;
+        font-size: 20px;
+      }
+
+      .step h3 {
+        font-size: 19px;
+      }
+
+      .step p {
+        font-size: 15px;
+        line-height: 1.95;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
@@ -477,28 +692,40 @@
 </head>
 
 <body>
+
   <div class="orb one"></div>
   <div class="orb two"></div>
 
   <div class="container">
+
+    <!-- HEADER -->
+
     <nav>
       <a class="brand" href="#">
         <span class="brand-icon">🐮</span>
         <span>CowVINHDAT</span>
       </a>
-      <span class="nav-badge">✦ DNS PROFILE</span>
+
+      <span class="nav-badge">
+        ✦ DNS PROFILE
+      </span>
     </nav>
 
     <main>
+
+      <!-- HERO -->
+
       <section class="hero">
+
         <div class="eyebrow fade-up">
           <span class="dot"></span>
           WELCOME TO COWVINHDAT
         </div>
 
         <h1 class="fade-up delay-1">
-          Your iPhone.<br>
-          <span class="gradient-text">Your Experience.</span>
+          <span class="gradient-text">
+            Your iPhone.
+          </span>
         </h1>
 
         <p class="fade-up delay-2">
@@ -507,20 +734,84 @@
           hiện đại và dễ sử dụng.
         </p>
 
+        <!-- SERVICES -->
+
         <div class="services fade-up delay-2">
-          <span class="service">💛 Locket Gold</span>
-          <span class="service">🎵 Spotify</span>
-          <span class="service">▶️ YouTube</span>
+
+          <span class="service">
+            <span class="service-icon">💛</span>
+            Locket Gold
+          </span>
+
+          <span class="service">
+            <span class="service-icon">
+              <svg width="23" height="23"
+                   viewBox="0 0 24 24"
+                   aria-hidden="true">
+                <circle cx="12" cy="12" r="12"
+                        fill="#1DB954"/>
+                <path d="M5 9c5-1.4 10-1 14 1"
+                      fill="none"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"/>
+                <path d="M6 12.5c4-1 8-.6 12 .8"
+                      fill="none"
+                      stroke="black"
+                      stroke-width="1.8"
+                      stroke-linecap="round"/>
+                <path d="M7 16c3-.7 6-.4 9 .7"
+                      fill="none"
+                      stroke="black"
+                      stroke-width="1.6"
+                      stroke-linecap="round"/>
+              </svg>
+            </span>
+            Spotify
+          </span>
+
+          <span class="service">
+            <span class="service-icon">
+              <svg class="youtube-icon"
+                   viewBox="0 0 28 20"
+                   aria-hidden="true">
+                <rect x="0" y="0"
+                      width="28" height="20"
+                      rx="6" fill="#FF0033"/>
+                <path d="M11 5.4L19 10L11 14.6Z"
+                      fill="white"/>
+              </svg>
+            </span>
+            YouTube
+          </span>
+
         </div>
       </section>
 
+      <!-- PROFILE CARD -->
+
       <section class="main-card fade-up delay-3">
+
         <div class="card-inner">
+
           <div class="card-top">
-            <div class="profile-icon">🐮</div>
-            <div>
+
+            <div class="profile-icon">
+              🐮
+            </div>
+
+            <div class="profile-info">
+
               <h2>con Bò Vinhdat 💛</h2>
-              <p>DNS Configuration Profile</p>
+
+              <p class="profile-subtitle">
+                DNS Configuration Profile
+              </p>
+
+              <p class="profile-description">
+                Locket Gold + Spotify + Youtube Premium
+              </p>
+
             </div>
           </div>
 
@@ -543,8 +834,12 @@
 
           <div class="detail">
             <span>Trạng thái tệp</span>
-            <strong class="status">● Có sẵn để tải</strong>
+            <strong class="status">
+              ● Có sẵn để tải
+            </strong>
           </div>
+
+          <!-- DOWNLOAD -->
 
           <a
             class="download-btn"
@@ -559,63 +854,123 @@
                     stroke-linejoin="round"
                     d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/>
             </svg>
+
             Tải cấu hình DNS
           </a>
 
-          <p class="note">
-            Cài đặt qua Safari trên iPhone hoặc iPad.<br>
-            Chỉ cài đặt hồ sơ từ nguồn mà bạn tin tưởng.
-          </p>
         </div>
       </section>
 
+      <!-- INSTALLATION GUIDE -->
+
       <section id="guide">
+
         <div class="section-title">
-          <h2>Cài đặt trong 3 bước</h2>
-          <p>Hướng dẫn cài đặt cấu hình trên iOS</p>
+
+          <p class="guide-label">
+            HƯỚNG DẪN
+          </p>
+
+          <h2>
+            Cài đặt trong 3 bước
+          </h2>
+
+          <p>
+            Hướng dẫn cài đặt cấu hình trên iOS
+          </p>
+
         </div>
 
         <div class="steps">
+
+          <!-- STEP 1 -->
+
           <article class="step">
-            <div class="step-number">01</div>
+
+            <div class="step-header">
+              <div class="step-number">
+                01
+              </div>
+              <span class="step-symbol">📥</span>
+            </div>
+
             <h3>Tải cấu hình</h3>
+
             <p>
               Mở website bằng Safari trên iPhone
               và chọn nút Tải cấu hình DNS.
             </p>
+
           </article>
 
+          <!-- STEP 2 -->
+
           <article class="step">
-            <div class="step-number">02</div>
+
+            <div class="step-header">
+              <div class="step-number">
+                02
+              </div>
+              <span class="step-symbol">⚙️</span>
+            </div>
+
             <h3>Mở Cài đặt</h3>
+
             <p>
               Vào Cài đặt, chọn Hồ sơ đã tải về
-              hoặc Cài đặt chung → VPN & Quản lý thiết bị.
+              hoặc Cài đặt chung → VPN &amp; Quản lý thiết bị.
             </p>
+
           </article>
 
+          <!-- STEP 3 -->
+
           <article class="step">
-            <div class="step-number">03</div>
+
+            <div class="step-header">
+              <div class="step-number">
+                03
+              </div>
+              <span class="step-symbol">✅</span>
+            </div>
+
             <h3>Xem và cài đặt</h3>
+
             <p>
               Ấn vào file -> Cài đặt. Cài đặt xong vào phần giới thiệu -> kéo xuống cuối -> Cài đặt chứng nhận tin cậy -> Bật Locket Gold Root CA -> xoá Locket tải lại -> done.
             </p>
+
           </article>
+
         </div>
 
       </section>
+
     </main>
+
   </div>
 
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="container footer-inner">
-      <span>© 2026 <strong>CowVINHDAT 💛</strong>. All rights reserved.</span>
+
+      <span>
+        © 2026
+        <strong>CowVINHDAT 💛</strong>.
+        All rights reserved.
+      </span>
+
       <a href="https://www.instagram.com/dtadvih/"
          target="_blank"
          rel="noopener noreferrer">
         Instagram @dtadvih ↗
       </a>
+
     </div>
+
   </footer>
+
 </body>
 </html>
